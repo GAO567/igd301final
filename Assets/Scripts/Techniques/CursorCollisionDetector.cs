@@ -67,6 +67,20 @@ public class CursorCollisionDetector : MonoBehaviour
         }
     }
 
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    Debug.Log("Cursor entered the collider of: " + other.gameObject.name);
+    //    gameObject.GetComponent<Outline>().enabled = true;
+    //    currenthit = other.gameObject;
+
+    //}
+
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    Debug.Log("Cursor exited the collider of: " + other.gameObject.name);
+    //    gameObject.GetComponent<Outline>().enabled = false;
+    //    currenthit = null;
+
       
     //}
     public GameObject GetCurrentHit()

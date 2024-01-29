@@ -14,21 +14,12 @@ public class RaycastTechnique : InteractionTechnique
 
     private bool isTriggering=false;
 
-    [SerializeField]
-    private GameObject cursorPrefab;
-    private GameObject cursorInstance; // curosr
-
+    
 
     private void Start()
     {
         lineRenderer = rightController.GetComponent<LineRenderer>();
 
-        // Instantiate the cursor
-        if (cursorPrefab != null)
-        {
-            cursorInstance = Instantiate(cursorPrefab);
-            cursorInstance.SetActive(false); // Initially hide it
-        }
     }
 
     private void FixedUpdate()
@@ -59,22 +50,13 @@ public class RaycastTechnique : InteractionTechnique
         // Determining the end of the LineRenderer depending on whether we hit an object or not
         if (hasHit)
         {
-            //position curson at the hit point
-            if (cursorInstance != null)
-            {
-                cursorInstance.transform.position = hit.point;
-                cursorInstance.SetActive(true);
-            }
+
 
 
             lineRenderer.SetPosition(1, hit.point);
         }
         else
         {
-            if (cursorInstance != null)
-            {
-                cursorInstance.SetActive(false);
-            }
 
             lineRenderer.SetPosition(1, raycastMaxDistance * rightControllerTransform.forward);
         }

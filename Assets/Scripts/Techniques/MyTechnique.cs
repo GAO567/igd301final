@@ -70,6 +70,7 @@ public class MyTechnique : InteractionTechnique
 
         if (!hasHit) hit.point = raycastMaxDistance * rightControllerTransform.forward;
         if (OVRInput.Get(OVRInput.Axis1D.SecondaryHandTrigger) == 0.0f){
+            //just raycast
             handtrigger = false;
             cursorRenderer.material.color = normalColor;
 
@@ -86,23 +87,7 @@ public class MyTechnique : InteractionTechnique
                     cursorInstance.SetActive(true);
                     Vector3 directionToCursor = (hit.point - rightControllerTransform.position).normalized;
                     Vector3 adjustedPosition = hit.point - directionToCursor * cursorInstance.transform.localScale.x * 0.5f;
-                    //circle.SetActive(true);
-                    //circle.transform.position = adjustedPosition;
-                    //circle.transform.rotation = Quaternion.LookRotation(rightControllerTransform.forward) * Quaternion.Euler(0, 0, 90);
-
-                    //flashlight.transform.position = rightControllerTransform.position;
-                    //flashlight.transform.rotation = Quaternion.LookRotation(rightControllerTransform.forward) * Quaternion.Euler(0, 0, 90);
-
-                    //float coneheight = Vector3.Distance(rightControllerTransform.position, adjustedPosition);
-                    //if (coneheight > 10.0f)
-                    //{
-                    //    flashlight.GetComponent<Cone>().ConeHeight = 10.0f;
-
-                    //}
-                    //else {
-                    //    flashlight.GetComponent<Cone>().ConeHeight = Vector3.Distance(rightControllerTransform.position, adjustedPosition);
-                    //}
-                    ////flashlight.GetComponent<Cone>().ConeRadius = 0.4f / flashlight.GetComponent<Cone>().ConeHeight;
+                 
 
 
                 }
@@ -114,10 +99,7 @@ public class MyTechnique : InteractionTechnique
             {
                 Vector3 cursorpos = rightControllerTransform.position + rightControllerTransform.forward * 2.0f;
                 cursorInstance.transform.position = rightControllerTransform.position;
-                //circle.SetActive(false);
-                //flashlight.transform.position = rightControllerTransform.position;
-                //flashlight.transform.rotation = Quaternion.LookRotation(rightControllerTransform.forward) * Quaternion.Euler(0, 0, 90);
-                //flashlight.GetComponent<Cone>().ConeHeight = Vector3.Distance(rightControllerTransform.position, cursorpos);
+               
 
 
 
@@ -134,6 +116,7 @@ public class MyTechnique : InteractionTechnique
         }
         else
         {
+            //advanced raycast 
             cursorRenderer.material.color = activeColor;
 
             float cursormove = OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick).y;
@@ -210,8 +193,6 @@ public class MyTechnique : InteractionTechnique
                 currentSelectedObject = currenthit;
 
             }
-
-
 
 
 

@@ -86,20 +86,6 @@ public class CollisionDetection : MonoBehaviour
 
         }
 
-        //if (cursorhit != other)
-        //{
-        //    other.GetComponent<MeshRenderer>().material = shoppingatlas;
-
-        //}
-
-        //Renderer renderer = other.gameObject.GetComponent<Renderer>();
-        //Material[] currentMaterials = renderer.materials;
-        //currentMaterials = System.Array.FindAll(currentMaterials, material =>
-        //        material.name != "OutlineMask (Instance) (Instance)" &&
-        //        material.name != "OutlineFill (Instance) (Instance)");
-        //var newMaterialsList = new List<Material>(currentMaterials);
-        //newMaterialsList.Add(shoppingatlas);
-        //renderer.materials = newMaterialsList.ToArray();
 
     }
 
@@ -125,32 +111,7 @@ public class CollisionDetection : MonoBehaviour
 
         }
         Debug.Log("other id " + other.gameObject.GetInstanceID());
-        //if (cursorhit != other)
-        //{
-        //    other.GetComponent<MeshRenderer>().material = translucent;
-
-        //}
-
-
-        //Renderer renderer = other.gameObject.GetComponent<Renderer>();
-        //Material[] materials = renderer.materials;
-        //int index = -1;
-
-        //for (int i = 0; i < materials.Length; i++)
-        //{
-        //    if (materials[i].name.Equals("hypercasual_shopping_atlas" + " (Instance)", System.StringComparison.InvariantCulture))
-        //    {
-        //        index = i;
-        //        break;
-        //    }
-        //}
-
-        //if (index != -1)
-        //{
-        //    List<Material> newMaterialsList = new List<Material>(materials);
-        //    newMaterialsList.RemoveAt(index);
-        //    renderer.materials = newMaterialsList.ToArray();
-        //}
+     
     }
 
     public void SetCursorHit(Collider collider)
